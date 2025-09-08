@@ -1,0 +1,14 @@
+/*LEYENDO UN VALOR DE UN ARCHIVO, MOSTRARLO POR PANTALLA*/
+class Program
+{
+    static void Main()
+    {
+
+        string RutaArchivo = @"C:\Users\usuario\source\repos\Ejercicio 4\ejercicio 4\bin\Debug\net6.0\numero_guardado.txt";
+        
+        string ImportarNumero = File.ReadAllText(RutaArchivo).Trim();
+
+        Console.WriteLine($"El número es: {ImportarNumero}");
+
+    }
+}

@@ -1,0 +1,23 @@
+/*INGRESANDO UN VALOR NUMERICO POR PANTALLA, GUARDARLO EN UN ARCHIVO*/
+class Program
+{
+    static void Main()
+    {
+
+        Console.WriteLine("Escriba un numero");
+        string entrada = Console.ReadLine();
+
+        if (double.TryParse(entrada, out double numero))
+        {
+            string archivo = "numero_guardado.txt";
+            File.WriteAllText(archivo, numero.ToString());
+            Console.WriteLine($" El número {numero} fue guardado correctamente en el archivo \"{archivo}\".");
+        }
+
+        else
+        {
+            Console.WriteLine("No se pudo guardar el numero");
+        }
+
+    }
+}

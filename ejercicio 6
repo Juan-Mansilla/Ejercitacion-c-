@@ -1,0 +1,26 @@
+/*LEYENDO 3 VALORES DESDE UN ARCHIVO,MOSTRARLO POR PANTALLA,GUARDARLOS EN UN VECTOR*/
+class Program
+{
+    static void Main()
+    {
+
+        string RutaArchivo = @"C:\Users\usuario\Desktop\Valores.txt";
+        string[] lineas = File.ReadAllLines(RutaArchivo);
+
+        int mayor = int.MinValue;
+
+        Console.WriteLine("Los números leídos son:");
+        foreach (string linea in lineas)
+        {
+            int numero = int.Parse(linea.Trim());
+            Console.WriteLine(numero);
+            if (numero > mayor)
+            {
+                mayor = numero;
+            }
+        }
+        string RutaMayor = @"C:\Users\usuario\Desktop\Mayor.txt";
+        File.WriteAllText(RutaMayor, mayor.ToString());
+        Console.WriteLine($"El numero mayor ({mayor}) ya fue guardado en Mayor.txt");
+    }
+}
